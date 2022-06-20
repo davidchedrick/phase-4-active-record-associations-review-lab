@@ -1,9 +1,20 @@
+$ rails g migration AddFIdToRide taxi_id:integer passenger_id:integer --no-test-framework
+
+class AddFIdToRide < ActiveRecord::Migration[6.1]
+def change
+add_column :rides, :taxi_id, :integer
+add_column :rides, :passenger_id, :integer
+end
+end
+
+rails db:migrate
+
 # Active Record Associations Review Lab
 
 ## Learning Goals
 
-- Create one-to-many and many-to-many associations
-- Use `has_many`, `belongs_to` and `has_many :through` Active Record macros
+-   Create one-to-many and many-to-many associations
+-   Use `has_many`, `belongs_to` and `has_many :through` Active Record macros
 
 ## Instructions
 
@@ -50,7 +61,7 @@ refresher on these.
 
 ## Resources
 
-- [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
-- [Active Record Associations: Join Table section][has-many-through]
+-   [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
+-   [Active Record Associations: Join Table section][has-many-through]
 
 [has-many-through]: http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association
